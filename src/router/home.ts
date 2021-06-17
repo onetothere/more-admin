@@ -1,9 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-export const homeRoutes: RouteRecordRaw[] = [
+const homeRoutes: RouteRecordRaw[] = [
   {
     path: '/home',
     name: 'Home',
+    meta: {
+      layout: 'home',
+    },
     component: () => import('@/pages/home/index.vue'),
   },
   {

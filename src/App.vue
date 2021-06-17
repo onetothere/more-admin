@@ -1,15 +1,26 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <component id="app" :is="currentLayout" />
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { computed, defineComponent, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import * as layouts from '@/layout/index';
 
 export default defineComponent({
   name: 'App',
-  setup() {},
+  components: layouts,
+  setup() {
+    const route = useRoute();
+    const currentLayout = computed(
+      // @ts-ignore
+      () => layouts[route.meta.layout] || 'default',
+    );
+
+    return {
+      currentLayout,
+    };
+  },
 });
 </script>
 

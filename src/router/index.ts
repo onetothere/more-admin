@@ -2,6 +2,7 @@ import type { App } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
 import homeRoutes from './home';
+import AdminRoutes from './admin';
 import baseRoutes from './base';
 
 const LayoutRoutes: RouteRecordRaw[] = [
@@ -9,9 +10,10 @@ const LayoutRoutes: RouteRecordRaw[] = [
     path: '/',
     name: 'HomeLayout',
     component: () => import('@/layout/home/index.vue'),
-    redirect: '/home',
+    redirect: '/admin',
     children: homeRoutes,
   },
+  ...AdminRoutes,
   ...baseRoutes,
 ];
 
