@@ -1,0 +1,49 @@
+{
+  "name": "more-admin",
+  "version": "0.0.1",
+  "author": {
+    "name": "onetothere",
+    "email": "572906809@qq.com",
+    "url": "https://github.com/ontothere"
+  },
+  "scripts": {
+    "dev": "vite --port 8080 --host --mode test",
+    "build:test": "vue-tsc --noEmit && vite build --mode test",
+    "build:fat": "vue-tsc --noEmit && vite build --mode fat",
+    "build:pre": "vue-tsc --noEmit && vite build --mode pre",
+    "build": "vue-tsc --noEmit && vite build --mode prod",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.7.5",
+    "axios": "^0.21.1",
+    "element-plus": "^1.0.2-beta.46",
+    "vue": "^3.0.5",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@types/node": "^15.9.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.0.5",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-define-config": "^1.0.8",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.10.0",
+    "less": "^4.1.1",
+    "node-sass": "^6.0.0",
+    "prettier": "^2.3.0",
+    "sass": "^1.34.1",
+    "sass-loader": "^12.0.0",
+    "typescript": "^4.1.3",
+    "vite": "^2.3.5",
+    "vite-plugin-import": "^0.4.0",
+    "vite-plugin-style-import": "^0.10.1",
+    "vue-tsc": "^0.0.24"
+  }
+}
