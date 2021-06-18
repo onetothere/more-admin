@@ -11,6 +11,7 @@
     "lib": ["esnext", "dom"],
     "isolatedModules": true, // 警告你哪些功能无法与独立编译模式一同工作
     "types": ["vite/client"], // vite 的类型定义
+    "typeRoots": ["./node_modules/@types/", "./types"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],

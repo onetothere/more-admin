@@ -1,13 +1,19 @@
 <template>
   <div class="logo-container">
     <img class="logo" :src="logo" alt="logo" />
-    <h1 class="title">More Admin</h1>
+    <h1 v-if="!isCollapse" class="title">More Admin</h1>
   </div>
 </template>
 
 <script lang="ts">
 import logo from '@/assets/image/head.png';
 export default {
+  props: {
+    isCollapse: {
+      type: Boolean,
+      default: true,
+    },
+  },
   setup() {
     return {
       logo,

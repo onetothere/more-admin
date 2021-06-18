@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue';
-import homeRoutes from '@/router/home';
+import homeRoutes from '@/router/modules/home';
 import { useRouter } from 'vue-router';
 import { getUserInfo } from '@/api/user';
 

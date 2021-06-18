@@ -4,7 +4,9 @@ const adminRoutes: RouteRecordRaw[] = [
   {
     path: '/admin',
     name: 'Admin',
-
+    meta: {
+      hidden: true,
+    },
     component: () => import('@/pages/admin/index.vue'),
   },
 ];

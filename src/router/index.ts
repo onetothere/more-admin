@@ -1,19 +1,29 @@
 import type { App } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
-import homeRoutes from './home';
-import AdminRoutes from './admin';
 import baseRoutes from './base';
 
-const LayoutRoutes: RouteRecordRaw[] = [
+const modules = import.meta.globEager('./modules/**/*.ts');
+const routeModuleList: RouteRecordRaw[] = [];
+
+Object.keys(modules).forEach((key) => {
+  const mod = modules[key].default || {};
+  const modList = Array.isArray(mod) ? mod : [mod];
+  routeModuleList.push(...modList);
+});
+console.log('routeModuleList: ', routeModuleList);
+
+export const LayoutRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'HomeLayout',
+    meta: {
+      hidden: true,
+    },
     component: () => import('@/layout/home/index.vue'),
     redirect: '/admin',
-    children: homeRoutes,
   },
-  ...AdminRoutes,
+  ...routeModuleList,
   ...baseRoutes,
 ];
 
